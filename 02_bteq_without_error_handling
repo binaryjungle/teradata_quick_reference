@@ -1,7 +1,0 @@
-.logon 127.0.0.1/dbc,dbc;
-
---SQL with issues. Date is misspelled as DAT
-
-SELECT CURRENT_DAT;
-
-.LOGOFF;
