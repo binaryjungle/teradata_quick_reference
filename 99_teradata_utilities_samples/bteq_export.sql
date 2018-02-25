@@ -1,0 +1,28 @@
+.LOGON 127.0.0.1/ABC_ADMIN,ADMIN123;
+
+.SET WIDTH 1000;
+
+.EXPORT DATA FILE = '/root/Desktop/create_large_file.txt'
+.RECORDMODE OFF
+
+SELECT
+CAST(
+   EMP_ID
+|| '|'
+|| EMP_NAME
+|| '|'
+|| GENDER
+|| '|'
+|| EMAIL
+|| '|'
+|| PHONE
+|| '|'
+|| JOINING_DATE
+|| '|'
+|| STATE
+AS VARCHAR(1000))
+FROM MASTER_DB.EMPLOYEE;
+
+.EXPORT RESET;
+
+.LOGOFF;

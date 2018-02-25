@@ -15,6 +15,7 @@
 
 SESSIONS 2
 SLEEP 5
+CHECKPOINT 10 /*In Minutes or Number of Rows*/
 TENACITY 5;
 
 .LAYOUT IP_FILE_LAYOUT;
@@ -38,7 +39,7 @@ INSERT INTO &DB_TARGET_TABLE..&TBL_TARGET
 ,STATE = :STATE
 );
 
-.IMPORT INFILE /root/Desktop/teradata_quick_reference/data/large_file.txt FROM 2 /*Loading starts from second row*/
+.IMPORT INFILE /root/Desktop/teradata_quick_reference/data/create_large_file.txt FROM 2 /*Loading starts from second row*/
 	FORMAT VARTEXT '|'
 	LAYOUT IP_FILE_LAYOUT
 	APPLY INSERT_QUERY;
